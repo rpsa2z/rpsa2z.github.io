@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Add Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md">
+        <h2 class="text-2xl font-bold text-indigo-600 mb-6">Admin Panel - Naya Product Jodein</h2>
+        
+        <!-- Product Add Form -->
+        <form id="productForm" class="space-y-4">
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">Product Ka Naam</label>
+                <input type="text" id="pName" required class="w-full border rounded-lg px-4 py-2 focus:outline-indigo-500" placeholder="Jaise: Stylish Shirt">
+            </div>
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">Price (₹)</label>
+                <input type="number" id="pPrice" required class="w-full border rounded-lg px-4 py-2 focus:outline-indigo-500" placeholder="Jaise: 499">
+            </div>
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">Image URL (Photo ka link)</label>
+                <input type="url" id="pImage" required class="w-full border rounded-lg px-4 py-2 focus:outline-indigo-500" placeholder="Image ka link yahan daalein">
+            </div>
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition">Product Save Karein</button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <a href="shop.html" class="text-indigo-600 hover:underline font-medium">Customer Shopping Page Dekhein &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('pName').value;
+            const price = document.getElementById('pPrice').value;
+            const image = document.getElementById('pImage').value;
+
+            // Naya product object
+            const newProduct = { name, price, image };
+
+            // Pehle se stored products nikalein ya naya array banayein
+            let products = JSON.parse(localStorage.getItem('shopProducts')) || [];
+            products.push(newProduct);
+
+            // LocalStorage mein wapas save karein
+            localStorage.setItem('shopProducts', JSON.stringify(products));
+
+            alert('Product safaltapoorvak add ho gaya hai!');
+            document.getElementById('productForm').reset();
+        });
+    </script>
+</body>
+</html>
