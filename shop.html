@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4 px-8 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-indigo-600">Meri Online Dukan</h1>
+        <a href="admin.html" class="text-sm bg-gray-200 px-3 py-1 rounded font-medium hover:bg-gray-300">Admin Login</a>
+    </header>
+
+    <!-- Product Grid Section -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-6">Available Products</h2>
+        
+        <!-- Products yahan JavaScript ke zariye show honge -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Products dynamically load honge -->
+        </div>
+    </main>
+
+    <script>
+        const productGrid = document.getElementById('productGrid');
+
+        // LocalStorage se products load karein
+        let products = JSON.parse(localStorage.getItem('shopProducts')) || [];
+
+        if (products.length === 0) {
+            productGrid.innerHTML = `<p class="text-gray-500 col-span-full">Abhi koi product available nahi hai. Admin panel se product add karein.</p>`;
+        } else {
+            products.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-xl shadow-md overflow-hidden border p-4 flex flex-col justify-between";
+                card.innerHTML = `
+                    <div>
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover rounded-md mb-4">
+                        <h3 class="font-bold text-lg mb-1">${product.name}</h3>
+                        <p class="text-indigo-600 font-semibold mb-4">₹${product.price}</p>
+                    </div>
+                    <button onclick="orderProduct('${product.name}', '${product.price}')" class="w-full bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700 transition">Order Karein</button>
+                `;
+                productGrid.appendChild(card);
+            });
+        }
+
+        function orderProduct(name, price) {
+            // Aap ise WhatsApp order ya simple checkout form se connect kar sakte hain
+            const message = `Hello, mujhe yeh product khareedna hai:\nProduct: ${name}\nPrice: ₹${price}`;
+            const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
