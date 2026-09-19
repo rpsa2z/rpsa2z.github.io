@@ -341,8 +341,24 @@
             transition: transform 0.3s;
         }
 
+    /* Colorful whatsapp */ 
         .btn-cta:hover {
             transform: scale(1.05);
+        }
+        .social-popup-btn:hover {
+            transform: scale(1.12);
+        }
+
+        .whatsapp-float {
+            background: #25d366;
+        }
+
+        .instagram-float {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .facebook-float {
+            background: #1877f2;
         }
 
         /* Colorful Footer */
@@ -666,11 +682,22 @@
         </div>
     </section>
 
-    <div class="cta-box">
-        <h3>ऑनलाइन Shopping करें</h3>
-        <p>“स्मार्ट खरीदारी करें, बेहतर जीवन जिएँ” | “आपकी जरूरत की हर चीज़, बस एक क्लिक दूर” | “आपकी जरूरत, हमारी प्राथमिकता” | क्लिक करें, खरीदें और आनंद लें”</p>
-        <a href="https://script.google.com/macros/s/AKfycbzNPAIHcb704GiSvRiMotJdJuHZhhz8PsCfVApEnFwr6rEyp2KHxyTszhATVK59WhHG/exec" class="btn-cta"> Online Shoping डैशबोर्ड साइन इन करें</a>
+    <!-- FLOATING SOCIAL MEDIA POPUPS (WhatsApp, Instagram, Facebook) -->
+    <div class="floating-socials">
+        <!-- WhatsApp Popup -->
+        <a href="https://wa.me/917379708609?text=Hello%20RPS%20A2Z%20Services,%20mujhe%20aapki%20service%20ke%20bare%20mein%20jaankari%20chahiye." target="_blank" class="social-popup-btn whatsapp-float" title="WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <!-- Instagram Popup -->
+        <a href="https://www.instagram.com" target="_blank" class="social-popup-btn instagram-float" title="Instagram Profile">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <!-- Facebook Popup -->
+        <a href="https://www.facebook.com" target="_blank" class="social-popup-btn facebook-float" title="Facebook Page">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
     </div>
+
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-col">
@@ -688,6 +715,6 @@
             <p>© 2026 RPS A2Z SERVICES. सर्वाधिकार सुरक्षित।</p>
         </div>
     </footer>
-
+    
 </body>
 </html>
