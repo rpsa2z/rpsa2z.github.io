@@ -343,6 +343,48 @@
             transform: scale(1.05);
         }
 
+        /* Floating Social Media Buttons */
+        .floating-socials {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9999;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-float {
+            background-color: #25d366;
+        }
+
+        .instagram-float {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .facebook-float {
+            background-color: #1877f2;
+        }
+
         /* Colorful Footer */
         footer {
             background: #0f172a;
@@ -397,42 +439,6 @@
             color: #00f2fe;
         }
 
-        /* Social Media Icons Styling */
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #1e293b;
-            color: #fff;
-            border-radius: 50%;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-icons a.whatsapp:hover {
-            background: #25D366;
-            transform: translateY(-3px);
-        }
-
-        .social-icons a.instagram:hover {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            transform: translateY(-3px);
-        }
-
-        .social-icons a.facebook:hover {
-            background: #1877F2;
-            transform: translateY(-3px);
-        }
-
         .copyright {
             text-align: center;
             border-top: 1px solid #1e293b;
@@ -456,12 +462,10 @@
                 <i class="fa-solid fa-print"></i> RPS A2Z SERVICES
             </a>
             <ul class="nav-links">
-                <a href="">About Us</a>
                 <li><a href="#home">होम</a></li>
                 <li><a href="#services">सेवाएं</a></li>
                 <li><a href="#gallery">गैलरी</a></li>
                 <li><a href="https://script.google.com/macros/s/AKfycbxscla9odWKW8d-iYV6-r1cx4oFaZ4zxMPzz8pUIPpbo4lpe2PQrEe3fvS1PLZ-nzYr7Q/exec">हमसे जुड़ें</a></li>
-                <li><a href="#complaint">शिकायत दर्ज करें</a></li>
                 <li><a href="https://script.google.com/macros/s/AKfycbzgOE0In4_k4hXa8XbiSICjYYs55fqf-uY4cydsr6OBAnWvo8HQZZ56iIn9M7BQjDsfVw/exec" class="btn-login">डैशबोर्ड लॉगिन</a></li>
             </ul>
         </nav>
@@ -603,6 +607,8 @@
                     <li><i class="fa-solid fa-circle-chevron-right"></i> Dashboard & Reports / डैशबोर्ड एवं रिपोर्ट</li>
                 </ul>
             </div>
+
+           
     </section>
 
     <section class="gallery-section" id="gallery">
@@ -698,6 +704,18 @@
         </div>
     </section>
 
+    <div class="floating-socials">
+        <a href="https://wa.me/917379708609?text=Hello%20RPS%20A2Z%20Services,%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" class="floating-btn whatsapp-float" title="WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/" target="_blank" class="floating-btn instagram-float" title="Instagram Profile">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" class="floating-btn facebook-float" title="Facebook Page">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+    </div>
+
     <div class="cta-box">
         <h3>ऑनलाइन Shopping करें</h3>
         <p>“स्मार्ट खरीदारी करें, बेहतर जीवन जिएँ” | “आपकी जरूरत की हर चीज़, बस एक क्लिक दूर” | “आपकी जरूरत, हमारी प्राथमिकता” | क्लिक करें, खरीदें और आनंद लें”</p>
@@ -709,17 +727,14 @@
             <div class="footer-col">
                 <h4>RPS A2Z SERVICES</h4>
                 <p>हमारी दुकान पर सभी प्रकार की डिजिटल पोर्टल सेवाएं, कमर्शियल ऑफसेट और फ्लेक्स प्रिंटिंग का काम शानदार गुणवत्ता के साथ किया जाता है।</p>
-                <div class="social-icons">
-                    <a href="https://wa.me/917379708609" target="_blank" class="whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://instagram.com/your_instagram_id" target="_blank" class="instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://facebook.com/your_facebook_id" target="_blank" class="facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
             </div>
            <div class="footer-col">
                 <h4>संपर्क विवरण</h4>
                 <p><i class="fa-solid fa-location-dot" style="color: #00f2fe; margin-right: 8px;"></i> Verma Market Babaya Mod Samesi, Lucknow, UP, India - 226303</p>
                 <p><i class="fa-solid fa-phone" style="color: #ff3e6c; margin-right: 8px;"></i> +91 7379708609</p>
                 <p><i class="fa-solid fa-envelope" style="color: #f7971e; margin-right: 8px;"></i> info.rpsbby@gmail.com</p>
+                <li><a href="#complaint">शिकायत दर्ज करें</a></li>
+                <li><a href="../about.html">About us</a></li>
             </div>
         </div>
         <div class="copyright">
